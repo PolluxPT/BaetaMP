@@ -1,0 +1,20 @@
+name: Build and test
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install build and test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends make gcc gcc-aarch64-linux-gnu libc6-dev-arm64-cross qemu-user python3 ffmpeg libmpv2 libsdl2-2.0-0 libsdl2-ttf-2.0-0 libcurl4t64
+      - run: make test
+      - run: make arm64 test-arm64
+      - run: make test-media test-http
+      - run: make release test-package
+# This workflow checks the project; it never publishes or uploads a release.
