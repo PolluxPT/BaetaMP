@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:01,800
+Teste 720p — legendas externas: ação, áudio, coração.
+
+2
+00:00:02,000 --> 00:00:05,000
+Primeira linha temporária
+
+3
+00:00:02,500 --> 00:00:05,000
+Segunda linha temporária
+
+4
+00:00:03,000 --> 00:00:05,000
+Terceira linha temporária
+
+5
+00:00:05,500 --> 00:00:08,800
+Agora deve aparecer apenas esta legenda.

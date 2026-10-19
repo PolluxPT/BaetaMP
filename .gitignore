@@ -1,0 +1,17 @@
+/build/
+/dist/
+__pycache__/
+*.pyc
+*.ppm
+*.bgr0
+/APPS/BaetaMP/config/
+/APPS/BaetaMP/Filmes/*
+!/APPS/BaetaMP/Filmes/Sample_720p.mp4
+!/APPS/BaetaMP/Filmes/Sample_720p.srt
+!/APPS/BaetaMP/Filmes/README.txt
+/APPS/BaetaMP/IPTV/*
+!/APPS/BaetaMP/IPTV/README.txt
+/APPS/BaetaMediaPlayer/
+/APPS/MediaPlayer_RGDSPlus/
+.DS_Store
+Thumbs.db
