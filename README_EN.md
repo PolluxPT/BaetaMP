@@ -1,4 +1,6 @@
-<p align="center"><img src="APPS/Imgs/BaetaMP.png" width="210" alt="BaetaMP — Media Player"></p>
+<img src="APPS/Imgs/BaetaMP.png" width="210" alt="BaetaMP — Media Player">
+
+[⬇ Descarregar / Download](https://github.com/PolluxPT/BaetaMP/releases/latest)
 
 # BaetaMP · Media Player for RGDS+
 
