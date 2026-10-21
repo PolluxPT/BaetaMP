@@ -617,7 +617,20 @@ static void activate(int index){
 }
 static void back(void){if(page==9){tracks_close();return;}if(page==8){resume_cancel();return;}if(page==7){exit_cancel();return;}if(page==6){favorite_cancel();return;}if(fetch_active){atomic_store(&fetch.cancel,1);notify(tr("A cancelar…"));return;}if(playing){stop_playback();return;}if(page==1){char p[4096];snprintf(p,sizeof(p),"%s",directory);char*s=strrchr(p,'/');if(s&&s!=p){*s=0;browse(p);}else{page=0;selected=0;}return;}if(page){page=0;selected=0;}else exit_open();}
 static void label(const char*s,int x,int y,void*face,SDL_Color color,int width){SDL_Surface*surface=ttfRender(face,s,color);if(!surface)return;SDL_Texture*t=pSDL_CreateTextureFromSurface(renderer,surface);pSDL_FreeSurface(surface);if(!t)return;int w,h;pSDL_QueryTexture(t,NULL,NULL,&w,&h);SDL_Rect dst={x,y,w,h},clip={x,y,width,h};pSDL_RenderSetClipRect(renderer,&clip);pSDL_RenderCopy(renderer,t,NULL,&dst);pSDL_RenderSetClipRect(renderer,NULL);pSDL_DestroyTexture(t);}
-static void fill(int x,int y,int w,int h,int active){SDL_Rect r={x,y,w,h};pSDL_SetRenderDrawColor(renderer,active?22:27,active?115:40,active?139:57,255);pSDL_RenderFillRect(renderer,&r);}
+static void fill(int x,int y,int w,int h,int active){
+    if(w<=0||h<=0)return;
+    pSDL_SetRenderDrawColor(renderer,active?22:27,active?115:40,active?139:57,255);
+    /* Round every UI control; retain the thin playback progress bar. */
+    int radius=h>10?h/4:0;if(radius>18)radius=18;if(radius>w/2)radius=w/2;
+    SDL_Rect middle={x,y+radius,w,h-2*radius};pSDL_RenderFillRect(renderer,&middle);
+    for(int row=0;row<radius;row++){
+        double dy=radius-row-0.5;
+        int inset=(int)ceil(radius-sqrt(radius*radius-dy*dy)-0.5);
+        SDL_Rect top={x+inset,y+row,w-2*inset,1};
+        SDL_Rect bottom={x+inset,y+h-1-row,w-2*inset,1};
+        pSDL_RenderFillRect(renderer,&top);pSDL_RenderFillRect(renderer,&bottom);
+    }
+}
 static const SDL_Color white={242,247,253,255},muted={164,187,207,255},accent={85,221,227,255};
 static void draw(void){
     pSDL_SetRenderDrawColor(renderer,12,21,33,255);pSDL_RenderClear(renderer);

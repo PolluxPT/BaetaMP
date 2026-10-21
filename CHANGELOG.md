@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1 — 2026-10-21
+
+- Rounded corners on all buttons, selectable rows, dialogs and keyboard keys.
+- Visual-only update: existing colors, layout, touch areas and playback behavior retained.
+- Cantos arredondados em todos os botões, listas, confirmações e teclado; alteração apenas estética.
+
 ## 1.3.0 — 2026-10-19
 
 - Public project name **BaetaMP** (MP = Media Player).

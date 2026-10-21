@@ -1,61 +1,79 @@
-# Publicar BaetaMP no GitHub — sem programar
+# Atualizar BaetaMP no GitHub / Update BaetaMP on GitHub
 
-Este pacote está preparado, mas **ainda não foi publicado na tua conta**. Não precisas de executar comandos para seguir este guia.
+## Português — versão 1.3.1
 
-## 1. Extrair o pacote
+O repositório já existe: https://github.com/PolluxPT/BaetaMP
+Este guia atualiza esse projeto e publica a versão com botões arredondados.
 
-Extrai `BaetaMP_GitHub_Pronto.zip`. Encontrarás:
+### Atualizar o repositório
 
-- **REPOSITORIO**: ficheiros que vão para o repositório GitHub.
-- **PARA_RELEASE**: ZIP instalável, checksum e texto da Release.
-- **COMECA_AQUI.txt**: resumo dos passos.
+1. Extrair `BaetaMP_v1.3.1_GitHub_Kit_PT_EN.zip` no computador.
+2. Abrir a raiz do repositório, onde está `README.md`.
+3. Escolher **Add file → Upload files**.
+4. Arrastar TODO O CONTEÚDO de `01_Atualizar_repositorio`, incluindo as subpastas.
+   Não arrastar a pasta exterior nem o ZIP do kit. Confirmar os caminhos
+   `src/player.c`, `APPS/BaetaMP/bin/baetamp`, `VERSION`, etc.
+5. Mensagem: `Release v1.3.1: rounded buttons throughout the UI`.
+6. Confirmar o commit na branch principal. Se o GitHub exigir uma pull request,
+   criar e integrar essa alteração antes de publicar a release.
+7. Conservar os restantes ficheiros do repositório. A pasta fornecida inclui
+   apenas as alterações necessárias; não é uma cópia completa do projeto.
 
-Não carregues o ZIP completo como se fosse o código do projeto: extrai primeiro.
+### Publicar a release
 
-## 2. Criar o repositório
+1. Abrir https://github.com/PolluxPT/BaetaMP/releases/new
+2. Criar a tag **v1.3.1** e selecionar a branch principal já atualizada.
+3. Título: **BaetaMP v1.3.1 — Rounded buttons / Botões arredondados**.
+4. Copiar o conteúdo de `03_Texto_da_release_PT_EN.md` para a descrição.
+5. Anexar os DOIS ficheiros de `02_Release`:
+   `BaetaMP-v1.3.1-RGDSPlus.zip` e `SHA256SUMS.txt`.
+6. Deixar **This is a pre-release** desmarcado e marcar **Set as latest release**,
+   se disponível. Confirmar os anexos e clicar em **Publish release**.
+7. Abrir o botão de download no README; deverá apresentar a v1.3.1.
 
-1. Entra na tua conta e abre [github.com/new](https://github.com/new?name=BaetaMP&description=Media+Player+for+Anbernic+RG+DS%2B+%E2%80%94+films%2C+subtitles+and+IPTV&visibility=public).
-2. Nome: **BaetaMP**. Descrição: **Media Player for Anbernic RG DS+ — films, subtitles and IPTV.**
-3. Escolhe **Public** para permitir o acesso público.
-4. Deixa desmarcadas as opções para criar README, .gitignore ou licença: os ficheiros completos já estão no pacote.
-5. Clica em **Create repository**.
+Manter a versão anterior no histórico. A nova versão Latest passa a ser o
+download principal. Não reutilizar a tag antiga para ficheiros diferentes.
+O ZIP do kit serve para preparar a publicação; não deve ser anexado à release.
 
-## 3. Carregar os ficheiros
+O pacote instalável inclui APPS, código e licenças. Os utilizadores copiam
+somente o conteúdo de APPS para `Roms/APPS` no cartão, conservando os seus dados.
+Os ficheiros automáticos Source code do GitHub não substituem o ZIP instalável.
+A alteração foi compilada e verificada localmente; falta testar na consola.
 
-1. Na página do repositório vazio, escolhe **uploading an existing file**; num repositório com ficheiros, usa **Add file → Upload files**.
-2. Abre a pasta **REPOSITORIO** no computador.
-3. Arrasta **o conteúdo dessa pasta**, incluindo as subpastas, para a zona de carregamento. A raiz no GitHub deve mostrar `README.md`, `src`, `APPS`, `tests`, `docs`, `Makefile`, etc.; não deve aparecer uma pasta única chamada REPOSITORIO.
-4. Inclui também **`.github`**, **`.gitignore`** e **`.gitattributes`**. Se o teu explorador os ocultar, ativa a visualização de ficheiros ocultos. A pasta `.github` contém o teste automático.
-5. Mensagem de commit sugerida: **Initial BaetaMP v1.3.0 release**.
-6. Confirma em **Commit changes**. Se o navegador limitar a quantidade de ficheiros, repete o carregamento por pastas, mantendo os mesmos caminhos na raiz.
+## English — version 1.3.1
 
-**Não carregues `PARA_RELEASE`, dados da tua consola, favoritos, listas pessoais ou logs para a raiz do repositório.** O pacote REPOSITORIO já está limpo. Não substituas a licença fornecida por MIT: este projeto mantém GPL-3.0-or-later.
+Use the existing repository: https://github.com/PolluxPT/BaetaMP
 
-## 4. Conferir o resultado
+### Update the repository
 
-O README deve apresentar o logótipo. Confirma que existe **APPS/Imgs/BaetaMP.png**, que a versão em `VERSION` é 1.3.0 e que `APPS/BaetaMP/bin/baetamp` foi carregado como ficheiro binário.
+1. Extract `BaetaMP_v1.3.1_GitHub_Kit_PT_EN.zip` on your computer.
+2. Open the repository root and select **Add file → Upload files**.
+3. Drag the CONTENTS of `01_Atualizar_repositorio`, preserving subfolders.
+   Do not upload the enclosing folder or the kit ZIP. Check paths such as
+   `src/player.c`, `APPS/BaetaMP/bin/baetamp` and `VERSION`.
+4. Commit message: `Release v1.3.1: rounded buttons throughout the UI`.
+5. Commit to the main branch, or create and merge a pull request if required.
+6. Keep unrelated repository files. The supplied folder is a set of updates,
+   not a complete repository snapshot.
 
-A aba **Actions** deverá executar **Build and test** quando o workflow estiver carregado. O pacote foi testado localmente, mas o workflow só será validado pelo serviço depois deste primeiro carregamento. Se falhar, envia o nome da etapa e a mensagem; não apagues o código-fonte.
+### Publish the release
 
-Se o carregamento de `.github` pelo navegador não estiver disponível na tua conta, mantém os restantes ficheiros e cria o workflow pela interface **Add file → Create new file**, com o caminho `.github/workflows/check.yml`, copiando o conteúdo do ficheiro fornecido.
+1. Open https://github.com/PolluxPT/BaetaMP/releases/new
+2. Create tag **v1.3.1**, targeting the updated main branch.
+3. Title: **BaetaMP v1.3.1 — Rounded buttons / Botões arredondados**.
+4. Paste `03_Texto_da_release_PT_EN.md` into the description.
+5. Attach both files from `02_Release`: `BaetaMP-v1.3.1-RGDSPlus.zip` and
+   `SHA256SUMS.txt`.
+6. Leave **This is a pre-release** unchecked; select **Set as latest release**
+   if available. Check the attachments and click **Publish release**.
+7. Verify the README download button opens v1.3.1.
 
-## 5. Criar a Release instalável
+Keep the previous release as history. Do not reuse its tag. Do not attach the
+publication kit ZIP to the release. Users install only the contents of APPS
+into `Roms/APPS`, keeping personal files. Local build and checks passed;
+physical console testing of this visual update is still pending.
 
-1. Abre **Releases → Draft a new release**.
-2. Em **Choose a tag**, escreve **v1.3.0**, cria essa tag e escolhe a branch que contém os ficheiros (normalmente `main`).
-3. Título: **BaetaMP v1.3.0 — for RGDS+**.
-4. Copia o texto de **PARA_RELEASE/NOTAS_RELEASE.md** para a descrição.
-5. Na zona dos ficheiros anexos, coloca **BaetaMP-v1.3.0-RGDSPlus.zip** e **SHA256SUMS.txt**, ambos em PARA_RELEASE.
-6. Confirma que os dois anexos estão presentes. Podes guardar em **Save draft** para rever. Quando estiver tudo certo, usa **Publish release**.
+## Referências / References
 
-O utilizador final descarrega o ZIP anexado, extrai-o e copia apenas o conteúdo de APPS para o cartão. Os ficheiros **Source code (zip)** que o GitHub cria automaticamente representam o código do repositório; não são o anexo de instalação que preparámos.
-
-## Atualizações futuras
-
-Mantém o mesmo repositório. Uma nova versão deve atualizar código, binário, VERSION e notas; cria uma nova tag e uma nova Release, anexando o respetivo ZIP/checksum. Não alteres apenas a versão escrita na página.
-
-## Documentação oficial consultada
-
-- [Criar repositório](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
-- [Carregar ficheiros](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
-- [Gerir Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+- https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository
+- https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository

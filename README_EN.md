@@ -10,7 +10,7 @@ A standalone film, subtitle and IPTV player for the **Anbernic RG DS+ running st
 
 ## Install
 
-Download **BaetaMP-v1.3.0-RGDSPlus.zip** from Releases. Extract it and copy the **contents of APPS** to `Roms/APPS` on the Games/TF2 card. Open BaetaMP in APPS. No compilation is required. Use the attached release ZIP for installation; **Code → Download ZIP** is the development project.
+Download **BaetaMP-v1.3.1-RGDSPlus.zip** from Releases. Extract it and copy the **contents of APPS** to `Roms/APPS` on the Games/TF2 card. Open BaetaMP in APPS. No compilation is required. Use the attached release ZIP for installation; **Code → Download ZIP** is the development project.
 
 The official logo is `APPS/Imgs/BaetaMP.png`, launcher `APPS/BaetaMP.sh`, program/data folder `APPS/BaetaMP/`.
 

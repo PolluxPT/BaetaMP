@@ -1,21 +1,32 @@
-# BaetaMP v1.3.0 — Media Player for RGDS+
+# BaetaMP v1.3.1 — Rounded buttons / Botões arredondados
 
 ## Português
 
-Primeira publicação com o nome **BaetaMP**. MP significa Media Player. Inclui o novo logótipo oficial em APPS/Imgs, instalador/lançador BaetaMP e migração das pastas antigas.
+Alteração exclusivamente estética: todos os botões, linhas selecionáveis,
+confirmações e teclas do teclado passam a ter cantos arredondados.
+Cores, tamanhos, disposição, áreas de toque e funcionamento mantêm-se.
 
-Mantém filmes, legendas externas e internas por lista, áudio por lista, IPTV M3U/M3U8 e URL direto, favoritos A–Z, PT/EN, retoma, volume, modos de imagem e confirmação de saída.
+Instalação: copiar o conteúdo de `APPS` para `Roms/APPS` no cartão, juntando
+as pastas e substituindo os ficheiros da aplicação. Conservar os vídeos,
+listas IPTV, favoritos e configurações existentes. Inclui o logótipo em Imgs.
+Para atualizar apenas o executável, copiar `APPS/BaetaMP/bin/baetamp` para
+`Roms/APPS/BaetaMP/bin/baetamp`.
 
-**Instalação:** extrai BaetaMP-v1.3.0-RGDSPlus.zip e copia o conteúdo de APPS para Roms/APPS. Junta a pasta Imgs à existente. Mantém as pastas antigas até à primeira abertura para permitir a migração.
-
-**Alvo:** RG DS+ Stock Linux. 720p é o alvo de uso; outros modelos/firmwares não estão validados. O núcleo 1.2 foi testado na consola; a reorganização 1.3.0 tem testes locais/ARM64 emulado, mas a nova migração ainda precisa de confirmação física.
+Alvo: RGDS+ Stock OS Linux ARM64. Compilação nativa e ARM64 verificadas;
+menus PT/EN inspecionados localmente. Esta alteração visual ainda não foi
+testada fisicamente na consola. Código e licenças incluídos.
 
 ## English
 
-First release under the **BaetaMP** name (MP = Media Player), with official artwork in APPS/Imgs and migration of former app folders.
+Visual-only update: rounded corners on every button, selectable row,
+confirmation dialog control and keyboard key. Colors, sizes, layout,
+touch areas and behavior are retained.
 
-Retains films, embedded/external subtitle and audio lists, IPTV/direct URLs, A–Z favorites, PT/EN, resume choice, physical volume, image modes and confirmed exit.
+Copy the contents of `APPS` into `Roms/APPS` on the SD card, merging folders
+and replacing app files. Keep existing videos, IPTV lists, favorites and
+settings. The logo is included in Imgs. To update only the executable,
+copy `APPS/BaetaMP/bin/baetamp` to `Roms/APPS/BaetaMP/bin/baetamp`.
 
-Extract the release ZIP and copy the contents of APPS into Roms/APPS, merging Imgs. Keep old app folders until the first launch. Target: RG DS+ stock Linux, with 720p as the intended use case. The 1.2 core was console-tested; new branding/migration passed local/emulated checks and awaits a physical migration check.
-
-Source and licenses are included in the release. SHA256SUMS.txt verifies the downloadable archive.
+Target: RGDS+ Stock OS Linux ARM64. Native and ARM64 builds checked; PT/EN
+menus inspected locally. This visual update has not been tested on physical
+hardware. Source and licenses included.

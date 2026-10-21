@@ -12,7 +12,7 @@ Leitor de filmes, legendas e IPTV para a **Anbernic RG DS+ com firmware Linux St
 
 ## Descarregar e instalar
 
-Na secção **Releases**, descarrega **BaetaMP-v1.3.0-RGDSPlus.zip**, extrai-o e copia **o conteúdo da pasta `APPS`** para `Roms/APPS` do cartão Games/TF2. Abre **BaetaMP** no menu APPS. Não é necessário compilar.
+Na secção **Releases**, descarrega **BaetaMP-v1.3.1-RGDSPlus.zip**, extrai-o e copia **o conteúdo da pasta `APPS`** para `Roms/APPS` do cartão Games/TF2. Abre **BaetaMP** no menu APPS. Não é necessário compilar.
 
 Para o pacote instalável, usa o ZIP anexado à Release; o botão **Code → Download ZIP** descarrega o projeto para desenvolvimento.
 
