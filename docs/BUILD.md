@@ -13,7 +13,7 @@ make test-media test-http
 make release test-package
 ```
 
-Output: `APPS/BaetaMP/bin/baetamp`, `dist/BaetaMP-v1.3.1-RGDSPlus.zip` and `dist/SHA256SUMS.txt`. The repo already ships a compiled ARM64 program for users who do not compile. To force a fresh ARM64 rebuild, run `make -B arm64`.
+Output: `APPS/BaetaMP/bin/baetamp`, `dist/BaetaMP-v1.3.2-RGDSPlus.zip` and `dist/SHA256SUMS.txt`. The repo already ships a compiled ARM64 program for users who do not compile. To force a fresh ARM64 rebuild, run `make -B arm64`.
 
 - `make test`: ASan/UBSan unit/track suites, disposable launcher migration tests and Bash syntax.
 - `make test-arm64`: the unit and track suites built for AArch64 and executed through QEMU, with `/usr/aarch64-linux-gnu` sysroot by default.

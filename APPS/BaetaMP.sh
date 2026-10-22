@@ -35,7 +35,7 @@ for legacy_app in "$RGDS_LEGACY_APP" "$RGDS_LEGACY_APP_2"; do
     fi
 done
 exec > "$app/config/Arranque.txt" 2>&1
-printf 'BaetaMP for RGDS+ 1.3.0\nData: %s\n' "$(date '+%Y-%m-%d %H:%M:%S')"
+printf 'BaetaMP for RGDS+ 1.3.2\nData: %s\n' "$(date '+%Y-%m-%d %H:%M:%S')"
 # Only recognized old app launchers are retired. Other apps are left alone.
 for old in BaetaMediaPlayer MediaPlayer; do
     script="$parent/$old.sh"
@@ -84,17 +84,22 @@ if command -v timeout >/dev/null && command -v wayland-info >/dev/null; then
     case "$protocols" in *zwp_idle_inhibit_manager*) export RGDS_IDLE_INHIBIT_PROTOCOL=1;; esac
 fi
 printf 'Idle-inhibit anunciado: %s\n' "$RGDS_IDLE_INHIBIT_PROTOCOL"
+saved_volume=''
 saved_touch=''
 saved_upper=''
 saved_lower=''
-for var in touch upper lower; do
+for var in volume touch upper lower; do
     case "$var" in
+        volume) node=/sys/class/anbernic_misc/openbor_volume;;
         touch) node=/sys/class/anbernic_misc/tpctrl;;
         upper) node=/sys/class/backlight/backlight1/brightness;;
         lower) node=/sys/class/backlight/backlight/brightness;;
     esac
     if [ -r "$node" ]; then value=$(cat "$node"); case "$value" in ''|*[!0-9]*) :;; *) printf -v "saved_$var" '%s' "$value";; esac; fi
 done
+restore_volume() {
+    [ -z "$saved_volume" ] || printf '%s\n' "$saved_volume" > /sys/class/anbernic_misc/openbor_volume
+}
 restore() {
     [ -z "$saved_touch" ] || printf '%s\n' "$saved_touch" > /sys/class/anbernic_misc/tpctrl
     [ -z "$saved_upper" ] || printf '%s\n' "$saved_upper" > /sys/class/backlight/backlight1/brightness
@@ -105,6 +110,7 @@ guardian=''
 cleanup(){
     if [ -n "$child" ]; then kill -TERM "$child" 2>/dev/null || :; wait "$child" 2>/dev/null || :; fi
     restore
+    restore_volume
     if [ -n "$guardian" ]; then kill -TERM "$guardian" 2>/dev/null || :; wait "$guardian" 2>/dev/null || :; fi
 }
 trap cleanup EXIT
@@ -114,6 +120,7 @@ trap 'exit 143' TERM HUP
     trap '' HUP
     while kill -0 "$$" 2>/dev/null; do sleep 1; done
     restore
+    restore_volume
 ) &
 guardian=$!
 if [ "$saved_touch" = 0 ] || [ "$saved_touch" = 1 ]; then printf '0\n' > /sys/class/anbernic_misc/tpctrl; fi

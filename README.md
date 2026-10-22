@@ -12,7 +12,7 @@ Leitor de filmes, legendas e IPTV para a **Anbernic RG DS+ com firmware Linux St
 
 ## Descarregar e instalar
 
-Na secção **Releases**, descarrega **BaetaMP-v1.3.1-RGDSPlus.zip**, extrai-o e copia **o conteúdo da pasta `APPS`** para `Roms/APPS` do cartão Games/TF2. Abre **BaetaMP** no menu APPS. Não é necessário compilar.
+Na secção **Releases**, descarrega **BaetaMP-v1.3.2-RGDSPlus.zip**, extrai-o e copia **o conteúdo da pasta `APPS`** para `Roms/APPS` do cartão Games/TF2. Abre **BaetaMP** no menu APPS. Não é necessário compilar.
 
 Para o pacote instalável, usa o ZIP anexado à Release; o botão **Code → Download ZIP** descarrega o projeto para desenvolvimento.
 
@@ -76,3 +76,5 @@ O workflow GitHub verifica o projeto em Ubuntu 24.04, mas não publica Releases 
 ## Licença e créditos
 
 Código da aplicação: **GPL-3.0-or-later**, preservando a licença do projeto anterior. Ver [LICENSE](LICENSE) e [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). As declarações mpv/curl e a fonte DejaVu conservam os seus avisos próprios. O logótipo fornecido por Filipe Baeta é preservado no PNG original.
+
+Na primeira utilização, a interface abre em inglês. Pode mudar para português nas opções; a escolha fica memorizada. Ao sair, o volume da consola regressa ao nível anterior à abertura do BaetaMP.

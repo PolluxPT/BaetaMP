@@ -1,4 +1,4 @@
-# BaetaMP v1.3.1 — Rounded buttons / Botões arredondados
+# BaetaMP v1.3.2 — Rounded buttons / Botões arredondados
 
 ## Português
 

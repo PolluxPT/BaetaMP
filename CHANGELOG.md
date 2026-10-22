@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.2 — 2026-10-22
+
+- English by default on first launch or when no valid language preference exists; saved PT/EN choices are preserved.
+- Capture the console volume before launching the player and restore it on exit, including launcher signal cleanup and guardian recovery.
+- Preserve the session volume across internal playback/UI restarts.
+- Inglês por defeito na primeira utilização; idioma escolhido preservado. Volume original da consola reposto à saída.
+
 ## 1.3.1 — 2026-10-21
 
 - Rounded corners on all buttons, selectable rows, dialogs and keyboard keys.

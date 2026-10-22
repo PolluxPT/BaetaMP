@@ -142,8 +142,9 @@ int main(void){
     const unsigned char*bad=(const unsigned char*)"\xf0";assert(favorite_sort_char(&bad)==0xf0);assert(favorite_sort_char(&bad)==0);
     // Legacy settings remain valid; language survives a fresh process and UI restart.
     char settings[4096];path_join(settings,sizeof(settings),config,"settings.txt");
-    file=fopen(settings,"w");assert(file);fputs("0 40 75\n",file);fclose(file);language=1;settings_load();assert(language==0&&font_size==40&&volume==75);
-    file=fopen(settings,"w");assert(file);fputs("0 36 65 2\n",file);fclose(file);language=1;settings_load();assert(language==0&&image_mode==2);
+    file=fopen(settings,"w");assert(file);fputs("0 40 75\n",file);fclose(file);language=1;settings_load();assert(language==1&&font_size==40&&volume==75);
+    file=fopen(settings,"w");assert(file);fputs("0 36 65 2\n",file);fclose(file);language=1;settings_load();assert(language==1&&image_mode==2);
+    language=0;settings_save();language=1;settings_load();assert(language==0);
     page=0;selected=4;options_open();assert(nav_count()==10);selected=8;button(0);assert(language==1&&page==5&&selected==8);
     assert(!strcmp(tr("Favoritos"),"Favorites"));assert(!strcmp(tr("Ver do Início"),"Play from Beginning"));
     assert(!strcmp(tr("My film.srt"),"My film.srt"));notify(tr("Favorito removido."));assert(!strcmp(note,"Favorite removed."));
@@ -154,8 +155,8 @@ int main(void){
     // Same toggle works in playback Options and does not alter the source selection.
     playing=1;page=1;selected=3;options_open();selected=8;button(0);assert(language==1&&playing&&page==5&&option_page==1&&option_selected==3);selected=9;button(0);assert(page==1&&selected==3&&playing);playing=0;
     language=0;settings_load();assert(language==1);classify_mpv_warning("HTTP 403");assert(strstr(playback_error,"server refused"));
-    file=fopen(settings,"w");assert(file);fputs("0 36 65 1 99\n",file);fclose(file);settings_load();assert(language==0);
-    unlink(settings);language=1;settings_load();assert(language==0);
+    file=fopen(settings,"w");assert(file);fputs("0 36 65 1 99\n",file);fclose(file);settings_load();assert(language==1);
+    unlink(settings);language=0;settings_load();assert(language==1);
     unlink(favpath);unlink(movie);rmdir(films);rmdir(config);rmdir(temp);
     printf("Playlist/headers HTTP, HLS, URLs, teclado, SELECT, volume, sessao e favoritos, confirmacao de saida, L/R e retoma/migracao e idiomas PT/EN e favoritos A-Z: PASS\n");return 0;
 }

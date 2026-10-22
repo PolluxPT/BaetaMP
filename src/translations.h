@@ -2,7 +2,7 @@
 #ifndef BAETA_TRANSLATIONS_H
 #define BAETA_TRANSLATIONS_H
 // 0 = Portuguese (default and legacy settings), 1 = English.
-static int language;
+static int language=1;
 typedef struct {const char *pt,*en;} Translation;
 static const Translation translations[]={
     {"Não foi possível controlar o ecrã inferior.","Could not control the lower screen."},

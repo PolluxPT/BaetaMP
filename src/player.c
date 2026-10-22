@@ -201,7 +201,7 @@ static const char *extension(const char*s){const char*p=strrchr(s,'.');return p?
 static int is_list(const char*s){return !strcasecmp(extension(s),".m3u")||!strcasecmp(extension(s),".m3u8");}
 static int is_video(const char*s){const char *exts[]={".mp4",".mkv",".avi",".mov",".webm",".m4v",".mpg",".mpeg",".ts",".m2ts",".flv",".wmv",NULL};for(int i=0;exts[i];i++)if(!strcasecmp(extension(s),exts[i]))return 1;return is_list(s);}
 static void settings_save(void){char p[4096],t[4096];path_join(p,sizeof(p),app,"config/settings.txt");path_join(t,sizeof(t),app,"config/settings.new");FILE*f=fopen(t,"w");if(!f)return;fprintf(f,"%d %d %d %d %d\n",screenmode,font_size,volume,image_mode,language);if(fclose(f)==0)rename(t,p);}
-static void settings_load(void){char p[4096];path_join(p,sizeof(p),app,"config/settings.txt");FILE*f=fopen(p,"r");int s,z,v,m,l;language=0;if(f){int fields=fscanf(f,"%d %d %d %d %d",&s,&z,&v,&m,&l);if(fields>=3){if(s>=0&&s<=1)screenmode=s;if(z>=20&&z<=64)font_size=z;if(v>=0&&v<=100)volume=v;if(fields>=4&&m>=0&&m<=2)image_mode=m;if(fields>=5&&l>=0&&l<=1)language=l;}fclose(f);}}
+static void settings_load(void){char p[4096];path_join(p,sizeof(p),app,"config/settings.txt");FILE*f=fopen(p,"r");int s,z,v,m,l;language=1;if(f){int fields=fscanf(f,"%d %d %d %d %d",&s,&z,&v,&m,&l);if(fields>=3){if(s>=0&&s<=1)screenmode=s;if(z>=20&&z<=64)font_size=z;if(v>=0&&v<=100)volume=v;if(fields>=4&&m>=0&&m<=2)image_mode=m;if(fields>=5&&l>=0&&l<=1)language=l;}fclose(f);}}
 // Locale-independent ordering for Portuguese/English UTF-8 channel names.
 // Fold case and Latin-1 accents; leave the displayed title and URL unchanged.
 static unsigned favorite_sort_char(const unsigned char**cursor){

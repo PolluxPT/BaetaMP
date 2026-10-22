@@ -2,7 +2,7 @@
 
 ## Instalação de raiz
 
-1. Descarrega o ZIP **BaetaMP-v1.3.1-RGDSPlus.zip** na Release.
+1. Descarrega o ZIP **BaetaMP-v1.3.2-RGDSPlus.zip** na Release.
 2. Extrai o ZIP no computador.
 3. Abre o cartão Games/TF2 e a pasta `Roms/APPS`.
 4. Copia para lá o conteúdo da pasta `APPS` do ZIP: `BaetaMP.sh`, `BaetaMP/` e `Imgs/`.

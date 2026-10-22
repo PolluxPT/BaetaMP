@@ -10,7 +10,7 @@ A standalone film, subtitle and IPTV player for the **Anbernic RG DS+ running st
 
 ## Install
 
-Download **BaetaMP-v1.3.1-RGDSPlus.zip** from Releases. Extract it and copy the **contents of APPS** to `Roms/APPS` on the Games/TF2 card. Open BaetaMP in APPS. No compilation is required. Use the attached release ZIP for installation; **Code → Download ZIP** is the development project.
+Download **BaetaMP-v1.3.2-RGDSPlus.zip** from Releases. Extract it and copy the **contents of APPS** to `Roms/APPS` on the Games/TF2 card. Open BaetaMP in APPS. No compilation is required. Use the attached release ZIP for installation; **Code → Download ZIP** is the development project.
 
 The official logo is `APPS/Imgs/BaetaMP.png`, launcher `APPS/BaetaMP.sh`, program/data folder `APPS/BaetaMP/`.
 
@@ -47,3 +47,5 @@ Diagnosed target: **RG DS+ Stock V1.0 (20260915), ARM64 Linux/Wayland**, using f
 See [BUILD.md](docs/BUILD.md) and [VALIDATION.md](docs/VALIDATION.md). `make test` runs native checks, `make arm64 test-arm64` builds/tests ARM64, `make test-media test-http` checks media/network integration, and `make release test-package` produces and validates the release ZIP.
 
 Application code: **GPL-3.0-or-later**. See LICENSE and THIRD_PARTY_NOTICES.md. Original third-party notices are retained. The supplied logo is preserved in `APPS/Imgs/BaetaMP.png`.
+
+On first launch, the interface opens in English. You can select Portuguese in Options; your choice is saved. On exit, the console volume returns to its level before BaetaMP was opened.

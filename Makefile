@@ -28,6 +28,7 @@ test: build/unit-native build/tracks-native
 	ASAN_OPTIONS=detect_leaks=0 ./build/unit-native
 	ASAN_OPTIONS=detect_leaks=0 ./build/tracks-native
 	python3 tests/migration.py
+	python3 tests/volume_restore.py
 	bash -n APPS/BaetaMP.sh
 build/unit-arm64: tests/unit.c src/player.c $(HEADERS)
 	mkdir -p build
